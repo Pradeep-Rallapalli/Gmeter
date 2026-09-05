@@ -1,25 +1,11 @@
 //
-//  ContentView.swift
+//  GaugeRing.swift
 //  Gmeter
 //
-//  Created by Pradeep Rallapalli on 9/4/26.
+//  Created by Pradeep Rallapalli on 9/5/26.
 //
 
 import SwiftUI
-
-struct ContentView: View {
-    @State private var model = MotionModel()
-    @State var highestG = 0.0
-    var body: some View {
-        ZStack{
-            GaugeRing(gLimit: String(model.gLimit))
-        }
-    }
-}
-
-#Preview {
-    ContentView()
-}
 
 struct GaugeRing: View {
     let ringDiam = 300.00
