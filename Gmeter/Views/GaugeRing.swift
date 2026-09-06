@@ -22,6 +22,7 @@ struct GaugeRing: View {
             Circle()
                 .stroke(Color.gray, lineWidth: ringThickness)
                 .frame(width: ringDiam, height: ringDiam)
+                .shadow(radius: 2)
             
             ForEach(Array(stride(from: 0, to: 360, by: 5)), id: \.self) { angle in
                 if(criticalAngles.contains(angle)) {
@@ -32,7 +33,7 @@ struct GaugeRing: View {
                     
                     Text(gLimit)
                         .font(.system(size: 25))
-                        .offset(y: -ringDiam/2 + labelOffset)
+                        .offset(y: -ringDiam/2 - labelOffset)
                         .rotationEffect(.degrees(Double(angle)))
                         .rotationEffect(.degrees(-Double(angle)))
                 } else {

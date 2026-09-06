@@ -23,7 +23,7 @@ class MotionModel {
         if(gVector > previousG) {
             previousG = gVector
         }
-        return previousG
+        return (previousG * 100).rounded() / 100
     }
     
 }
