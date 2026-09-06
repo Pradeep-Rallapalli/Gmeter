@@ -18,8 +18,8 @@ struct ContentView: View {
             }
             
             Text("Highest G: \(model.highestG, specifier: "%.2f")").padding(.top, 20)
-            Text("X: \(model.roundedAccelX, specifier: "%.2f")")
-            Text("Y: \(model.roundedAccelY, specifier: "%.2f")")
+            Text("X: \(model.accelX, specifier: "%.2f")")
+            Text("Y: \(model.accelY, specifier: "%.2f")")
         }
     }
 }

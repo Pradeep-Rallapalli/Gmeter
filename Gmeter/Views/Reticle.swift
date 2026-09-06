@@ -17,7 +17,7 @@ struct Reticle: View {
             .frame(width: reticleDiam, height: reticleDiam)
             .foregroundStyle(customYellow)
             .shadow(color: customYellow.opacity(0.6), radius: 5, x: 0, y: 0)
-            .offset(x: model.roundedAccelX * 150, y: (model.roundedAccelY * 150) * -1)
+            .offset(x: model.accelX * 150, y: (model.accelY * 150) * -1)
     }
 }
 
