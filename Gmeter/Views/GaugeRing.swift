@@ -8,11 +8,11 @@
 import SwiftUI
 
 struct GaugeRing: View {
-    let ringDiam = 300.00
+    let ringDiam = Constants.gaugeDiameter
     let labelOffset = 30.00
-    let gLimit: String
+    let gLimit = String(Constants.gLimit)
     let criticalAngles = [0, 90, 180, 270]
-    let ringThickness = 6.00
+    let ringThickness = Constants.gaugeRingThickness
     var body: some View {
         ZStack {
             Rectangle()
@@ -50,5 +50,5 @@ struct GaugeRing: View {
 }
 
 #Preview {
-    GaugeRing(gLimit: "0.6")
+    GaugeRing()
 }

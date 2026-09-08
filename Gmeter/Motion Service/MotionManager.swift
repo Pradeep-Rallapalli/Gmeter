@@ -34,6 +34,8 @@ class MotionManager {
             if self.currentG > self.highestG {
                 self.highestG = self.currentG
             }
+            
+            
         }
     }
 }

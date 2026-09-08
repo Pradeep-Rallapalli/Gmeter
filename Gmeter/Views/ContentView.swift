@@ -13,13 +13,12 @@ struct ContentView: View {
     var body: some View {
         VStack {
             ZStack{
-                GaugeRing(gLimit: String(model.gLimit))
+                GaugeRing()
                 Reticle(model: model)
             }
             
             Text("Highest G: \(model.highestG, specifier: "%.2f")").padding(.top, 20)
-            Text("X: \(model.accelX, specifier: "%.2f")")
-            Text("Y: \(model.accelY, specifier: "%.2f")")
+            
         }
     }
 }

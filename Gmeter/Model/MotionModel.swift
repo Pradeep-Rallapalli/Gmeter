@@ -11,14 +11,29 @@ import Foundation
 class MotionModel {
     
     let motionManager = MotionManager()
-    let gLimit = 0.6
+    let gLimit = Constants.gLimit
     
-    var accelX: Double {motionManager.accelX}
-    var accelY: Double {motionManager.accelY}
+    private var accelX: Double {motionManager.accelX}
+    private var accelY: Double {motionManager.accelY}
     
     var currentG: Double {motionManager.currentG}
     var highestG: Double {motionManager.highestG}
     
+    var pixelX: Double {
+        let value = accelX * Constants.reticleScaleFactor
+        //print("pixelX = \(value)")
+        return value
+    }
+    var pixelY: Double {
+        let value = (accelY * Constants.reticleScaleFactor) * -1
+        //print("pixelY = \(value)")
+        return value
+    }
 }
+    
+   
+    
+    
+
 
 
