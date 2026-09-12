@@ -11,8 +11,12 @@ enum Constants {
     static let gaugeRingThickness = 6.00
     static let gLimit = 0.6
     
-    static let reticleDiam = 20.00
+    static let reticleDiam = 15.00
     static var reticleScaleFactor: Double {
         gaugeRadius/gLimit
     }
+    
+    static let tailSize = 80
+    static let tailDiameter = 8.00
+    static let pointRemoveDelay = 0.2
 }
