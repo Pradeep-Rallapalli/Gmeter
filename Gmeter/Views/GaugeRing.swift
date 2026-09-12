@@ -12,6 +12,7 @@ struct GaugeRing: View {
     let labelOffset = 30.00
     let gLimit = String(Constants.gLimit)
     let criticalAngles = [0, 90, 180, 270]
+    let midAngles = [45, 135, 225, 315]
     let ringThickness = Constants.gaugeRingThickness
     var body: some View {
         ZStack {
@@ -20,7 +21,19 @@ struct GaugeRing: View {
             Rectangle()
                 .frame(width: 1, height: ringDiam)
             Circle()
-                .stroke(Color.gray, lineWidth: ringThickness)
+                .strokeBorder(
+                        LinearGradient(
+                            colors: [
+                                Color(white: 0.95),  // bright highlight
+                                Color(white: 0.55),  // mid gray
+                                Color(white: 0.85),  // secondary highlight
+                                Color(white: 0.35)   // shadow side
+                            ],
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        ),
+                        lineWidth: Constants.gaugeRingThickness
+                    )
                 .frame(width: ringDiam, height: ringDiam)
                 .shadow(radius: 2)
             
@@ -36,15 +49,29 @@ struct GaugeRing: View {
                         .offset(y: -ringDiam/2 - labelOffset)
                         .rotationEffect(.degrees(Double(angle)))
                         .rotationEffect(.degrees(-Double(angle)))
-                } else {
+                } else if(midAngles.contains(angle)) {
                     Rectangle()
-                        .frame(width: 2, height: 8)
-                        .offset(y: -ringDiam/2 + ringThickness)
+                        .frame(width: 2, height: Constants.gaugeDiameter)
                         .rotationEffect(.degrees(Double(angle)))
+                }else {
+                    
 
                 }
             }
             
+            ForEach(1..<3, id: \.self) {index in
+                    let newIndex = Double(index)
+                Circle()
+                    .stroke(lineWidth: 3)
+                    .frame(width: (Constants.gaugeRadius/newIndex))
+                    
+            }
+            Text("G-Force")
+                .font(.system(size: 16, weight: .heavy))
+                .italic()
+                .foregroundStyle(Constants.amgAmber)
+                .shadow(color: Color.yellow, radius: 6)
+                .offset(y: Constants.gaugeRadius + 25)
         }
     }
 }

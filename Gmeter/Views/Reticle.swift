@@ -10,8 +10,8 @@ import SwiftUI
 struct Reticle: View {
     
     var model: MotionModel
-    private let customYellow = Color(red: 244 / 255, green: 240 / 255, blue: 0 / 255)
-    
+   
+
     @State private var tailPoints: [TailPoint] = []
     
     
@@ -22,8 +22,8 @@ struct Reticle: View {
             ForEach(tailPoints) { tailPoint in
                 Circle()
                     .frame(width: Constants.tailDiameter, height: Constants.tailDiameter)
-                    .foregroundStyle(customYellow)
-                    .shadow(color: customYellow.opacity(0.3), radius: 5, x: 0, y: 0)
+                    .foregroundStyle(Constants.amgRed)
+                    .shadow(color: Constants.amgRed.opacity(0.3), radius: 5, x: 0, y: 0)
                     .offset(x: tailPoint.x, y: tailPoint.y)
                 
             }
@@ -31,8 +31,8 @@ struct Reticle: View {
             //Reticle
             Circle()
                 .frame(width: Constants.reticleDiam, height: Constants.reticleDiam)
-                .foregroundStyle(customYellow)
-                .shadow(color: customYellow.opacity(0.6), radius: 5, x: 0, y: 0)
+                .foregroundStyle(Constants.amgWhite)
+                .shadow(color: .red.opacity(0.7), radius: 6, x: 0, y: 0)
                 .offset(x: model.pixelX, y: model.pixelY)
         }.onChange(of: [model.pixelX, model.pixelY]) {
             if(tailPoints.count < Constants.tailSize) {
