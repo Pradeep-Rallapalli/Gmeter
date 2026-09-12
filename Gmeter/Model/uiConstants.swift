@@ -7,10 +7,10 @@
 import SwiftUI
 
 enum Constants {
-    static let gaugeDiameter = 300.00
+    static let gaugeDiameter = 370.00
     static let gaugeRadius = gaugeDiameter / 2
-    static let gaugeRingThickness = 12.0
-    static let gLimit = 0.6
+    static let gaugeRingThickness = 16.0
+    static let gLimit = 0.8
     
     static let reticleDiam = 15.00
     static var reticleScaleFactor: Double {

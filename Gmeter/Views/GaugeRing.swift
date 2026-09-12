@@ -53,9 +53,6 @@ struct GaugeRing: View {
                     Rectangle()
                         .frame(width: 2, height: Constants.gaugeDiameter)
                         .rotationEffect(.degrees(Double(angle)))
-                }else {
-                    
-
                 }
             }
             
