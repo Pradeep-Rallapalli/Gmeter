@@ -13,7 +13,7 @@ class MotionManager {
     
     private let windowSize = 8
     
-    private var motionManager = CMMotionManager()
+    var cmManager = CMMotionManager()
     
     var accelY: Double = 0
     var accelX: Double = 0
@@ -25,8 +25,8 @@ class MotionManager {
     var currentG: Double = 0
     
     init() {
-        motionManager.deviceMotionUpdateInterval = 1/60
-        motionManager.startDeviceMotionUpdates(to: .main) { [weak self] data, error in
+        cmManager.deviceMotionUpdateInterval = 1/60
+        cmManager.startDeviceMotionUpdates(to: .main) { [weak self] data, error in
             guard let newAccel = data?.userAcceleration else { return }
             guard let self else { return }
             

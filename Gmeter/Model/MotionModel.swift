@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import CoreMotion
 
 @Observable
 class MotionModel {
@@ -28,6 +29,14 @@ class MotionModel {
         let value = (accelY * Constants.reticleScaleFactor) * -1
         //print("pixelY = \(value)")
         return value
+    }
+    
+    func startMotionUpdates() {
+        motionManager.cmManager.startDeviceMotionUpdates()
+    }
+    
+    func stopMotionUpdates() {
+        motionManager.cmManager.stopDeviceMotionUpdates()
     }
 }
     

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.scenePhase) private var scenePhase
     @State private var model = MotionModel()
     @State var highestG = 0.0
     var body: some View {
@@ -19,6 +20,11 @@ struct ContentView: View {
             
             Text("Highest G: \(model.highestG, specifier: "%.2f")").padding(.top, 20)
             
+        }
+        .onAppear {
+            UIApplication.shared.isIdleTimerDisabled = true
+        }.onDisappear {
+            UIApplication.shared.isIdleTimerDisabled = false
         }
     }
 }
