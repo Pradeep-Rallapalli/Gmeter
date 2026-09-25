@@ -1,11 +1,11 @@
 # G-Force Gauge
 
 An iOS app that displays live G-force data from the phone's accelerometer, styled after an AMG-style instrument cluster gauge so I can role play driving an AMG in my Kia:)
-
-![Home](home.PNG)
-![Log graph](logGraph.PNG)
-![Name session](nameField.PNG)
-
+<p float="left">
+  <img src="home.PNG" width="200" />
+  <img src="nameField.PNG" width="200" />
+  <img src="logGraph.PNG" width="200" />
+</p>
 ## What it does
 
 The app reads live acceleration data from CoreMotion and drives a reticle around a gauge face in real time showing direction and magnitude of G-force as you drive, brake, or turn. It also tracks the highest G-force recorded during a session.
