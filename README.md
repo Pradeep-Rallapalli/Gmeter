@@ -2,7 +2,9 @@
 
 An iOS app that displays live G-force data from the phone's accelerometer, styled after an AMG-style instrument cluster gauge so I can role play driving an AMG in my Kia:)
 
-![Final look](Final.png)
+![Home](home.png)
+![Log graph](logGraph.png)
+![Name session](nameField.png)
 
 ## What it does
 
